@@ -46,7 +46,7 @@ foreach ($events as $event) {
         break;
 
       default :
-        if(preg_match("/荒|野|行|動|走る|野郎/u", $text)){
+        if(preg_match("/荒|野|行|動|走|野郎/u", $text)){
           $phrase = array(
             '遠ざかって行く英雄、その後ろは人々の期待と荒野の夕焼け',
             '平和な生活は我が夢、しかし挫折の前に、高まる戦意は我が心',
@@ -71,7 +71,7 @@ foreach ($events as $event) {
         }
 
 
-        if(preg_match("/日付テスト/u", $text)){
+        if(preg_match("/日付/u", $text)){
 
 //          $json = file_get_contents('senkyou.json');
 //          if($json === false){
@@ -87,9 +87,9 @@ foreach ($events as $event) {
             $date = fgets($fp);
             $key = fgets($fp);
             $date = rtrim($date);
-            $date = (int)$date;
+            $date = (float)$date;
             $hour5 = $date - (5 * 60 * 60);
-            $bot->replyText($event->getReplyToken(), '$date='.var_dump($date).'$key='.$key.'5時間前='.$hour5.'型='.gettype($date));
+            $bot->replyText($event->getReplyToken(), '$key='.$key.'5時間前='.$hour5.'型='.gettype($date));
             $yogen = '良い';
            if(rand(0 ,10) >= 7){
               $yogen = '悪い';
