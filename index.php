@@ -89,7 +89,7 @@ foreach ($events as $event) {
             $date = rtrim($date);
             $date = (double)$date;
             $hour5 = $date - (5 * 60 * 60);
-            $bot->replyText($event->getReplyToken(), '$key='.$key.'5時間前='.$hour5.'型='.gettype($date));
+            $bot->replyText($event->getReplyToken(), '$date='.$date.'5時間前='.$hour5.'型='.gettype($date));
             $yogen = '良い';
            if(rand(0 ,10) >= 7){
               $yogen = '悪い';
