@@ -87,7 +87,7 @@ foreach ($events as $event) {
             $date = fgets($fp);
             $key = fgets($fp);
             $date = rtrim($date);
-            $date = (float)$date;
+            $date = (double)$date;
             $hour5 = $date - (5 * 60 * 60);
             $bot->replyText($event->getReplyToken(), '$key='.$key.'5時間前='.$hour5.'型='.gettype($date));
             $yogen = '良い';
