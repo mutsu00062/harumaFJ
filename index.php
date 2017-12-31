@@ -72,7 +72,8 @@ foreach ($events as $event) {
 
 
         if(preg_match("/日付/u", $text)){
-
+          $date;
+          $key;
 //          $json = file_get_contents('senkyou.json');
 //          if($json === false){
 //            error_log('File loading error - senkyou.json');
