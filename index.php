@@ -72,8 +72,6 @@ foreach ($events as $event) {
 
 
         if(preg_match("/日付/u", $text)){
-          $date;
-          $key;
 //          $json = file_get_contents('senkyou.json');
 //          if($json === false){
 //            error_log('File loading error - senkyou.json');
@@ -85,7 +83,7 @@ foreach ($events as $event) {
             if($fp === false){
               error_log("file open error");
             }
-            global $date;
+            $date;
             $date = fgets($fp);
             $key = fgets($fp);
             $date = rtrim($date);
@@ -106,25 +104,7 @@ foreach ($events as $event) {
 //          }
            $bot->replyText($event->getReplyToken(),'戦況予想：'.$yogen);
           }
-        if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
-          /*  $image = rand(1, 10);
-          say($image);
-          if($image > 5){
-            $image = rand(1, 10);
-            if($image >= 8){
-              $bot->replyText($event->getReplyToken(), 'ヌいた');
-            }else if($image >= 6){
-              $bot->replyText($event->getReplyToken(), 'シコい');
-            }else if($image >= 4){
-              $bot->replyText($event->getReplyToken(), 'シコくない');
-            }else if($image > 1){
-              say('ヌけない');
-            }else{
-              say('エラーでち！');
-            }
-          }*/
         }
-    }
     
 }
     //たぶんここが主の挙動
