@@ -84,6 +84,7 @@ foreach ($events as $event) {
             if($fp === false){
               error_log("file open error");
             }
+            global $date;
             $date = fgets($fp);
             $key = fgets($fp);
             $date = rtrim($date);
