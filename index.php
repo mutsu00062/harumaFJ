@@ -88,6 +88,9 @@ foreach ($events as $event) {
           $bot->replyText($event->getReplyToken(),"調整中だよ(はあと");
         }
 
+        if(preg_match("/日馬富士/u", $text)){
+          $bot->replyText($event->getReplyToken(),"飛田に一票");
+        }
 
         if(preg_match("/日付/u", $text)){
 //          $json = file_get_contents('senkyou.json');
